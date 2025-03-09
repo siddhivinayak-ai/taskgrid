@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+        <div class="logo" onclick="window.location.href='index.html';">
+            <img src="logo.PNG" alt="Logo">
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="ri-menu-line"></i>
+        </div>
+        <nav id="mobileNav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+        <div class="close-btn" id="closeBtn"><i class="ri-close-line"></i></div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://script.google.com/macros/s/AKfycbw8yGQu0EdnBsba_F4DzeqNrmPW7qBkcAN-NhP_6e7A_xZepVY3m43opMAjIEvSMQ2f/exec" method="POST">
+      
+      <input type="text" name="company" placeholder="Company Name" required />
+      <input type="email" name="businessEmail" placeholder="Business Email" required />
+
+      <!-- Industry as a text field -->
+      <input type="text" name="industry" placeholder="Industry" required />
+
+      <!-- Website URL input -->
+      <!-- <input type="URL" name="website" placeholder="Website (if any)" /> -->
+
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="number" name="daysToComplete" placeholder="Days to complete the project" required />
+
+      <select name="urgency" required>
+        <option value="Regular">Regular</option>
+        <option value="Urgent">Urgent</option>
+      </select>
+
+      <textarea name="address" placeholder="Address" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script >
+    document.addEventListener("DOMContentLoaded", function () {
+    var contactForm = document.getElementById("contact-form");
+
+    // Form submission handler
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Form submitted successfully!");
+            contactForm.reset();
+        })
+        .catch(error => console.error("Error:", error));
+    });
+});
+
+
+
+// sidebar
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuIcon.addEventListener('click', function() {
+        sidebar.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+    });
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Grid </title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="logo" onclick="window.location.href='index.html';">
+            <img src="logo.PNG" alt="Logo">
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="ri-menu-line"></i>
+        </div>
+        <nav id="mobileNav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+        <div class="close-btn" id="closeBtn"><i class="ri-close-line"></i></div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Automate Your Business with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/ZOHO.svg/2560px-ZOHO.svg.png" style="height:50px"></h1>
+            <p>Streamline your workflows and boost productivity with our tailored Zoho solutions.</p>
+            <a href="contact.html" class="btn">Get Started</a>
+        </div>
+    </section>
+
+<!-- </img> | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1200px-Salesforce.com_logo.svg.png" style="height:70px;"></img> |  <img src="https://www.padok.fr/hubfs/Images/Azure/Microsoft-Azure.webp" style="height: 50px;"></img> -->
+
+    <section class="services">
+      <div class="container">
+          <h2>Our Services</h2>
+          <div class="service-carousel">
+              <button class="carousel-button prev" id="prevButton"><i class="ri-arrow-left-s-line"></i></button>
+              <div class="service-grid" id="serviceGrid">
+              </div>
+              <button class="carousel-button next" id="nextButton"><i class="ri-arrow-right-s-line"></i></button>
+          </div>
+      </div>
+  </section>
+
+  <footer style="background-color: #ffffff; padding: 20px 0; border-top: 2px solid #ddd;">
+    <div class="container" style="text-align: center;">
+        <p style="font-size: 18px; font-weight: bold; color: black  ;">TaskGrid - Automate & Accelerate Your Business</p>
+        
+        <p style="margin: 5px 0; font-size: 14px; color: #555;">
+            Empowering startups with seamless automation using Zoho tools.
+        </p>
+
+        <nav style="margin: 10px 0;">
+            <a href="/about" style="margin: 0 15px; text-decoration: none; color: #007bff;">About Us</a> 
+            <a href="/services" style="margin: 0 15px; text-decoration: none; color: #007bff;">Services</a> 
+            <a href="/contact" style="margin: 0 15px; text-decoration: none; color: #007bff;">Contact</a> 
+            <a href="/privacy-policy" style="margin: 0 15px; text-decoration: none; color: #007bff;">Privacy Policy</a>
+        </nav>
+
+        <div style="margin: 10px 0;">
+            <a href="https://www.linkedin.com/company/taskgrid" target="blank" style="margin: 0 10px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbb0_npkny3YOvY91wF6jgOkRwTEcaUcyUOg&s" alt="LinkedIn" style="width: 24px;">
+            </a>
+            <a href="https://twitter.com/taskgrid" target="blank" style="margin: 0 10px;">
+                <img src="https://e7.pngegg.com/pngimages/708/311/png-clipart-twitter-twitter-thumbnail.png" alt="Twitter" style="width: 24px;">
+            </a>
+            <a href="https://facebook.com/taskgrid" target="blank" style="margin: 0 10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/768px-Facebook_Logo_%282019%29.png" alt="Facebook" style="width: 24px;">
+            </a>
+        </div>
+
+        <p style="font-size: 14px; color: #555;">
+            &copy; 2024 TaskGrid. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+
+
+    <script src="home.js"></script>
+</body>
+</html>

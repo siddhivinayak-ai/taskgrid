@@ -1,0 +1,327 @@
+/* pricing.css */
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #f4f4f4;
+}
+
+
+
+
+
+
+
+/* Header */
+header {
+  background: #fff;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  transform: scale(1.08);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  font-size: 1em;
+  font-weight: 500;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #00ff99;
+  transition: width 0.3s ease-in-out;
+  margin: 5px auto 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #00ff99;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8em;
+  
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1001;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #00ff99;
+}
+
+.close-btn {
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.5em;
+  
+}
+
+.ri-close-line{
+  
+  color: black;
+}
+
+@media (max-width: 768px) {
+  nav {
+      display: none;
+      
+  }
+
+  .menu-icon {
+      display: block;
+      color: black;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pricing Section Styles */
+section:first-of-type {
+  text-align: center;
+  padding: 90px 20px 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section:first-of-type h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+section:first-of-type p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Pricing Cards Section */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 30px 15px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-card-header {
+  background-color: #00ff99;
+  color: #121212;
+  padding: 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.pricing-card-header h2 {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.pricing-card-price {
+  padding: 25px 15px;
+}
+
+.pricing-card-price p {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 8px 0;
+  color: #333;
+}
+
+.pricing-card-features {
+  padding: 15px;
+}
+
+.pricing-card-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pricing-card-features li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+}
+
+.pricing-card-features li i {
+  margin-right: 8px;
+  color: #00ff99;
+}
+
+.pricing-card-button {
+  padding: 25px 15px;
+}
+
+.pricing-card-button a {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.pricing-card-button a:hover {
+  background-color: #555;
+}
+
+/* Mobile Pricing Cards Adjustments */
+@media (max-width: 600px) {
+  .pricing-cards {
+      grid-template-columns: 1fr;
+      padding: 20px 10px 40px;
+      gap: 20px;
+  }
+
+  .pricing-card {
+      padding: 20px;
+  }
+
+  .pricing-card-header {
+      padding: 15px;
+  }
+
+  .pricing-card-header h2 {
+      font-size: 1.2em;
+  }
+
+  .pricing-card-price p {
+      font-size: 1.8em;
+  }
+
+  .pricing-card-features li {
+      font-size: 0.85em;
+  }
+
+  .pricing-card-button a {
+      padding: 8px 18px;
+      font-size: 0.85em;
+  }
+}
