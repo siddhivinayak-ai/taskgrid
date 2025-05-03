@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>/* contact.css */
+
+    /* General Styles */
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    
+    
+    
+    
+    
+    /* Header */
+    header {
+      background: #fff;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo img {
+      height: 60px;
+      width: auto;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    
+    .logo img:hover {
+      transform: scale(1.08);
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li {
+      margin-left: 20px;
+    }
+    
+    nav ul li a {
+      font-size: 1em;
+      font-weight: 500;
+      color: #333;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      position: relative;
+      text-transform: capitalize;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+    
+    nav ul li a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #00ff99;
+      transition: width 0.3s ease-in-out;
+      margin: 5px auto 0;
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    nav ul li a:hover {
+      color: #00ff99;
+    }
+    
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 1.8em;
+      
+    }
+    
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1001;
+    }
+    
+    .sidebar.active {
+      right: 0;
+    }
+    
+    .sidebar-content {
+      padding: 20px;
+    }
+    
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+    
+    .sidebar ul li {
+      margin-bottom: 20px;
+    }
+    
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.1em;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .sidebar ul li a:hover {
+      color: #00ff99;
+    }
+    
+    .close-btn {
+      text-align: right;
+      cursor: pointer;
+      font-size: 1.5em;
+      
+    }
+    
+    .ri-close-line{
+      
+      color: black;
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+          display: none;
+          
+      }
+    
+      .menu-icon {
+          display: block;
+          color: black;
+      }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /* Contact Section */
+    #contact {
+      max-width: 90%;
+      margin: 100px auto 40px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 255, 153, 0.2);
+      text-align: center;
+    }
+    
+    #contact h2 {
+      font-size: 24px;
+      color: #00ff99;
+      margin-bottom: 15px;
+    }
+    
+    /* Form Styles */
+    #contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #fff;
+      background: rgba(50, 50, 50, 0.8);
+      outline: none;
+      transition: 0.3s ease-in-out;
+    }
+    
+    input:focus,
+    select:focus,
+    textarea:focus {
+      background: rgba(80, 80, 80, 0.9);
+      box-shadow: 0 0 8px rgba(0, 255, 153, 0.3);
+    }
+    
+    /* Select Dropdown */
+    select {
+      appearance: none;
+      cursor: pointer;
+    }
+    
+    /* Textarea */
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+    
+    /* Submit Button */
+    button {
+      background-color: #00ff99;
+      color: #121212;
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-top: 8px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    
+    button:hover {
+      background-color: #b2fef7;
+      color: #121212;
+    }
+    
+    /* Responsive Design Adjustments */
+    @media (max-width: 600px) {
+      #contact {
+          padding: 20px;
+          margin: 80px auto 30px;
+      }
+    
+      #contact h2 {
+          font-size: 22px;
+      }
+    
+      input,
+      select,
+      textarea {
+          padding: 8px;
+          font-size: 13px;
+      }
+    
+      button {
+          padding: 8px 16px;
+          font-size: 13px;
+      }
+    }</style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+        <div class="logo" onclick="window.location.href='index.html';">
+            <img src="logo.PNG" alt="Logo">
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="ri-menu-line"></i>
+        </div>
+        <nav id="mobileNav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+        <div class="close-btn" id="closeBtn"><i class="ri-close-line"></i></div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://script.google.com/macros/s/AKfycbw8yGQu0EdnBsba_F4DzeqNrmPW7qBkcAN-NhP_6e7A_xZepVY3m43opMAjIEvSMQ2f/exec" method="POST">
+      
+      <input type="text" name="company" placeholder="Company Name" required />
+      <input type="email" name="businessEmail" placeholder="Business Email" required />
+
+      <!-- Industry as a text field -->
+      <input type="text" name="industry" placeholder="Industry" required />
+
+      <!-- Website URL input -->
+      <!-- <input type="URL" name="website" placeholder="Website (if any)" /> -->
+
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <input type="number" name="daysToComplete" placeholder="Days to complete the project" required />
+
+      <select name="urgency" required>
+        <option value="Regular">Regular</option>
+        <option value="Urgent">Urgent</option>
+      </select>
+
+      <textarea name="address" placeholder="Address" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script >
+    document.addEventListener("DOMContentLoaded", function () {
+    var contactForm = document.getElementById("contact-form");
+
+    // Form submission handler
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var formData = new FormData(contactForm);
+
+        fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert("Form submitted successfully!");
+            contactForm.reset();
+        })
+        .catch(error => console.error("Error:", error));
+    });
+});
+
+
+
+// sidebar
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuIcon.addEventListener('click', function() {
+        sidebar.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+    });
+});
+  </script>
+</body>
+</html>

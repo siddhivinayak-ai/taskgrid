@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TaskGird</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* about.css */
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.logo img:hover {
+  transform: scale(1.08);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  font-size: 1em;
+  font-weight: 500;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  position: relative;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #00ff99;
+  transition: width 0.3s ease-in-out;
+  margin: 5px auto 0;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: #00ff99;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8em;
+  
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1001;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #00ff99;
+}
+
+.close-btn {
+  text-align: right;
+  cursor: pointer;
+  font-size: 1.5em;
+  
+}
+
+.ri-close-line{
+  
+  color: black;
+}
+
+@media (max-width: 768px) {
+  nav {
+      display: none;
+      
+  }
+
+  .menu-icon {
+      display: block;
+      color: black;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #00ff99, #00ccff);
+  color: #121212;
+  text-align: center;
+  padding: 150px 20px;
+}
+
+.about-hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  font-size: 1.2em;
+}
+
+/* Our Story, Mission, Team Sections */
+.our-story, .our-mission, .our-team {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.our-story h2, .our-mission h2, .our-team h2 {
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.our-story p, .our-mission p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* Team Members Section */
+.team-members {
+  /* display: grid; */
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* about.css (continued) */
+
+.team-member {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff; /* Or another suitable background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.profile-image {
+  width: 200px;
+  height: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+.member-details {
+  flex-grow: 1;
+}
+
+.member-details h3 {
+  font-size: 1.8em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.member-details .position {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.member-details .intro {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 1.8em;
+  color: #0077B5; /* LinkedIn color or your chosen social icon color */
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .team-member {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .profile-image {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+
+  .member-details {
+      text-align: center;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html';">
+                <img src="logo.PNG" alt="Logo">
+            </div>
+            <div class="menu-icon" id="menuIcon">
+                <i class="ri-menu-line"></i>
+            </div>
+            <nav id="mobileNav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="close-btn" id="closeBtn"><i class="ri-close-line"></i></div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1>About TaskGird</h1>
+                <p>Empowering businesses with seamless automation solutions.</p>
+            </div>
+        </section>
+
+        <section class="our-story">
+            <div class="container">
+                <h2>Our Story</h2>
+                <p>TaskGird was founded with a vision to simplify business operations through innovative automation. We recognized the challenges businesses face in managing complex workflows and the need for efficient, reliable solutions. </p>
+                <p>Over the years, we've grown, learned, and evolved, always keeping our focus on delivering value to our clients. We believe in building strong relationships and understanding the unique needs of each business we work with. This customer-centric approach has been the cornerstone of our success.</p>
+            </div>
+        </section>
+
+        <section class="our-mission">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>Our mission is to empower businesses of all sizes to achieve their full potential through cutting-edge automation solutions. We strive to provide tools that are not only powerful and efficient but also user-friendly and accessible. By simplifying complex processes, we enable our clients to focus on what they do best – growing their business.</p>
+            </div>
+        </section>
+
+        <section class="our-team">
+            <div class="container">
+                <h2>Meet Our Team</h2>
+                <div class="team-members">
+                    <div class="team-member">
+                        <img class="profile-image" src="profile.png" alt="John Doe">
+                        <div class="member-details">
+                            <h3>Siddhivinayak Waghmode</h3>
+                            <p class="position">Lead Solutions Developer</p>
+                            <p class="intro">Passionate about creating efficient automation solutions and helping businesses thrive through technology.</p>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/siddhivinayak-waghmode-641b6b241?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bp%2BxXl0ciQsaot%2F8%2FjNgnKQ%3D%3D" target="_blank" class="social-icon">
+                                    <i class="ri-linkedin-box-fill"></i>
+                                </a>
+                                </div>
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script >
+        // sidebar
+document.addEventListener('DOMContentLoaded', function() {
+  const menuIcon = document.getElementById('menuIcon');
+  const sidebar = document.getElementById('sidebar');
+  const closeBtn = document.getElementById('closeBtn');
+
+  menuIcon.addEventListener('click', function() {
+      sidebar.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', function() {
+      sidebar.classList.remove('active');
+  });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Taskgrid</title>
+    <link rel="stylesheet" href="pricing.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html';">
+                <img src="logo.PNG" alt="Logo">
+            </div>
+            <div class="menu-icon" id="menuIcon">
+                <i class="ri-menu-line"></i>
+            </div>
+            <nav id="mobileNav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="close-btn" id="closeBtn"><i class="ri-close-line"></i></div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Our Pricing Packages</h2>
+            <p class="intro">Get started with our flexible pricing options. Limited-time offer: <p style="color: red; font-weight:600;">First 30 clients </p>receive these services for <span class="free-mark">FREE</span>!</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Package</h3>
+                    <div class="price">
+                        <span class="original-price">$50 (Rs 4000)</span>
+                        <span class="discounted-price">FREE</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Zoho Forms Automation</li>
+                        <li><i class="fas fa-check-circle"></i> Zoho Flows Basic Workflows</li>
+                        <li><i class="fas fa-check-circle"></i> Zoho Creator Basic Customization</li>
+                        <li><i class="fas fa-check-circle"></i> Zoho Mail Integration</li>
+                        <!-- <li><i class="fas fa-times-circle"></i> Zoho Books Integration</li> -->
+                        <!-- <li><i class="fas fa-plus-circle"></i> Zoho CRM Basic Setup</li> -->
+                        <li><i class="fas fa-plus-circle"></i> Zoho SalesIQ - Basic Chatbot</li>
+                    </ul>
+                    <a href="contact.html" class="button">Get Started</a>
+                </div>
+
+                <div class="pricing-card standard">
+                    <h3>Standard Package</h3>
+                    <div class="price">
+                        <span class="original-price">$100 (Rs 8000)</span>
+                        <span class="discounted-price">FREE</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> All Basic Features</li>
+                        <!-- <li><i class="fas fa-check-circle"></i> Zoho Books Integration</li> -->
+                        <li><i class="fas fa-check-circle"></i> Zoho CRM </li>
+                        <li><i class="fas fa-check-circle"></i> Zoho SalesIQ - Basic Chatbot</li>
+                        <li><i class="fas fa-plus-circle"></i> Advanced Workflow Logic</li>
+                        <li><i class="fas fa-plus-circle"></i> Enhanced Reporting</li>
+                        <li><i class="fas fa-plus-circle"></i> Priority Support</li>
+                    </ul>
+                    <a href="contact.html" class="button">Get Started</a>
+                </div>
+
+                <!-- <div class="pricing-card premium">
+                    <h3>Premium Package</h3>
+                    <div class="price">
+                        <span class="original-price">$150 (Rs 12000)</span>
+                        <span class="discounted-price">FREE</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> All Standard Features</li>
+                        <li><i class="fas fa-check-circle"></i> Custom Application Development (Basic)</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced Zoho CRM Automation</li>
+                        <li><i class="fas fa-check-circle"></i> AI-Powered Chatbot Features</li>
+                        <li><i class="fas fa-rocket"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-rocket"></i> Performance Optimization</li>
+                        <li><i class="fas fa-rocket"></i> Training Sessions</li>
+                    </ul>
+                    <a href="contact.html" class="button">Contact Us</a>
+                </div> -->
+            </div>
+
+            <p class="note">Note: These prices will be applicable after the first 50 free clients. Grab your free service now!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Taskgrid. All rights reserved.</p>
+    </footer>
+
+    <script >
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuIcon.addEventListener('click', function() {
+        sidebar.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+    });
+});
+    </script>
+</body>
+</html>

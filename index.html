@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+      /* splash.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+.splash-screen {
+    text-align: center;
+}
+
+.logo-container {
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 20px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    color: #363535; /* Neon green */
+}
+
+.loading-bar {
+    width: 200px;
+    height: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #64ffda; /* Neon green */
+    border-radius: 4px;
+    transition: width 0.5s linear; /* Adjust animation speed */
+}
+    </style>
+</head>
+<body>
+    <div class="splash-screen">
+        <div class="logo-container">
+            <img src="logo.PNG" alt="Company Logo" class="logo">
+            <p class="tagline"> Automate & Accelerate Your Business</p>
+        </div>
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <script >
+      // splash.js
+document.addEventListener('DOMContentLoaded', () => {
+    const progressBar = document.querySelector('.progress');
+    let width = 0;
+    const interval = setInterval(frame, 20); // Adjust speed of progress bar
+
+    function frame() {
+        if (width >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                window.location.href = 'home.html';
+            }, 500); // Small delay before redirecting
+        } else {
+            width++;
+            progressBar.style.width = width + '%';
+        }
+    }
+});
+    </script>
+</body>
+</html>
